@@ -10,7 +10,7 @@ struct Day01: AdventDay {
             }
             .compactMap { chars -> Int? in
                 guard let firstNumber = chars.first(where: \.isNumber),
-                      let lastNumber = chars.last(where: \.isNumber)
+                    let lastNumber = chars.last(where: \.isNumber)
                 else {
                     return nil
                 }
@@ -35,7 +35,8 @@ struct Day01: AdventDay {
             "eight": "8",
             "nine": "9",
         ]
-        return data
+        return
+            data
             .split(separator: "\n")
             .map { line -> [Character] in
                 return line.indices.reduce(into: [Character]()) { partialResult, index in
@@ -45,7 +46,7 @@ struct Day01: AdventDay {
                         partialResult.append(character)
                         return
                     }
-                    
+
                     let substring = line[index...]
 
                     for (key, value) in mapping where substring.starts(with: key) {
@@ -55,7 +56,7 @@ struct Day01: AdventDay {
             }
             .compactMap { chars -> Int? in
                 guard let firstNumber = chars.first(where: \.isNumber),
-                      let lastNumber = chars.last(where: \.isNumber)
+                    let lastNumber = chars.last(where: \.isNumber)
                 else {
                     return nil
                 }
