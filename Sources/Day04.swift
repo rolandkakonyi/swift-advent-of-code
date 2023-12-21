@@ -56,7 +56,6 @@ struct Day04: AdventDay {
         }
 
         for cardId in cardIdCount.keys.sorted() {
-
             guard let count = winningCardIdAndCount[cardId] else {
                 fatalError("no winning count")
             }
